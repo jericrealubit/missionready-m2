@@ -29,18 +29,18 @@ jobs:
           pwd
           ls
 
-      # Zip the build directory
-      - name: Zip Release
-        uses: TheDoctor0/zip-release@0.7.6
+      - name: Create Archive
+        uses: thedoctor0/zip-release@0.7.5
         with:
-          filename: release.zip
-          path: ./build/*
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+          type: 'zip'
+          filename: 'release.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+  
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
         with:
-          name: node-app
-          path: release.zip
+          artifacts: "release.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
