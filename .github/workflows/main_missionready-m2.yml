@@ -29,6 +29,11 @@ jobs:
 
       # Zip the build directory
       - name: Zip Release
+        run: |
+          pwd
+          ls -la
+          dir
+          cd
         uses: TheDoctor0/zip-release@0.7.6
         with:
           filename: release.zip
