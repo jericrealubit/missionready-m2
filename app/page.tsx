@@ -1,50 +1,6 @@
-//"use client";
-
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  const data = {
-    name: "Bishal Shrestha",
-    age: "27",
-  };
-
-  return NextResponse.json({ data });
-}
-
-require("dotenv").config();
-
 import Link from "next/link";
-//import { useEffect } from "react";
-
-const url = process.env.PURL;
-
-const options = {
-  method: "POST",
-  headers: {
-    "content-type": "application/json",
-    "Prediction-Key": process.env.PKEY,
-  },
-  data: {
-    url: "https://www.volvocars.com/images/v/-/media/market-assets/australia/applications/localpages/images/model-lineup/my24-xc40-recharge-single.png?iar=0&w=1080",
-  },
-  url,
-};
 
 export default function Home() {
-  // useEffect(() => {
-  //   console.log({
-  //     url: process.env.PURL,
-  //     key: process.env.PKEY,
-  //   });
-  //   // fetch("/api/route-name", {
-  //   //   method: "POST",
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //   },
-  //   //   body: JSON.stringify(objectWithData),
-  //   // });
-  // });
-
   return (
     <main>
       <h1>{process.env.PURL}</h1>
