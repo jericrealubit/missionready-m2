@@ -61,4 +61,4 @@ jobs:
           app-name: 'missionready-m2'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ACB4333766214B6390DA16CFC8E03870 }}
-          package: .
+          package: release.zip
