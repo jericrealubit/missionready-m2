@@ -5,11 +5,12 @@ name: Build and deploy Node.js app to Azure Web App - missionready-m2
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - master
+  workflow_dispatch:
       
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
 jobs:
   build:
@@ -31,11 +32,10 @@ jobs:
           pwd
           ls
 
-      - name: Create Archive
+      - name: Zip Release
         uses: thedoctor0/zip-release@0.7.5
         with:
-          type: 'zip'
-          filename: 'release.zip'
+          filename: release.zip
           exclusions: '*.git* /*node_modules/* .editorconfig'
   
       - name: Upload Artifact to deployment job
