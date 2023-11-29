@@ -20,7 +20,6 @@ const NavBar = () => {
 
       <h1>CarSale</h1>
       <Link href="/">Daskboard</Link>
-      <Link href="/tickets">Tickets</Link>
       <Link href="/findcar">FindCar</Link>
       <Link href="/ssg">SSG</Link>
     </nav>
