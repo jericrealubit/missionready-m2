@@ -43,6 +43,7 @@ jobs:
         with:
           artifacts: "release.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
 
   deploy:
     runs-on: ubuntu-latest
