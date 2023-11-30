@@ -1,0 +1,224 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "hatch1"
+    },
+    {
+      "id": "2",
+      "type": "hatch2"
+    },
+    {
+      "id": "3",
+      "type": "hatch3"
+    },
+    {
+      "id": "4",
+      "type": "hatch4"
+    },
+    {
+      "id": "5",
+      "type": "hatch5"
+    },
+    {
+      "id": "6",
+      "type": "hatch6"
+    },
+    {
+      "id": "7",
+      "type": "hatch7"
+    },
+    {
+      "id": "8",
+      "type": "hatch8"
+    },
+    {
+      "id": "9",
+      "type": "hatch9"
+    },
+    {
+      "id": "10",
+      "type": "hatch10"
+    },
+    {
+      "id": "11",
+      "type": "hatch11"
+    },
+    {
+      "id": "12",
+      "type": "sedan1"
+    },
+    {
+      "id": "13",
+      "type": "sedan2"
+    },
+    {
+      "id": "14",
+      "type": "sedan3"
+    },
+    {
+      "id": "15",
+      "type": "sedan4"
+    },
+    {
+      "id": "16",
+      "type": "sedan5"
+    },
+    {
+      "id": "17",
+      "type": "sedan6"
+    },
+    {
+      "id": "18",
+      "type": "sedan7"
+    },
+    {
+      "id": "19",
+      "type": "sedan8"
+    },
+    {
+      "id": "20",
+      "type": "sedan9"
+    },
+    {
+      "id": "21",
+      "type": "sedan10"
+    },
+    {
+      "id": "22",
+      "type": "sedan11"
+    },
+    {
+      "id": "23",
+      "type": "suv1"
+    },
+    {
+      "id": "24",
+      "type": "suv2"
+    },
+    {
+      "id": "25",
+      "type": "suv3"
+    },
+    {
+      "id": "26",
+      "type": "suv4"
+    },
+    {
+      "id": "27",
+      "type": "suv5"
+    },
+    {
+      "id": "28",
+      "type": "suv6"
+    },
+    {
+      "id": "29",
+      "type": "suv7"
+    },
+    {
+      "id": "30",
+      "type": "suv8"
+    },
+    {
+      "id": "31",
+      "type": "suv9"
+    },
+    {
+      "id": "32",
+      "type": "suv10"
+    },
+    {
+      "id": "33",
+      "type": "suv11"
+    },
+    {
+      "id": "34",
+      "type": "ute1"
+    },
+    {
+      "id": "35",
+      "type": "ute2"
+    },
+    {
+      "id": "36",
+      "type": "ute3"
+    },
+    {
+      "id": "37",
+      "type": "ute4"
+    },
+    {
+      "id": "38",
+      "type": "ute5"
+    },
+    {
+      "id": "39",
+      "type": "ute6"
+    },
+    {
+      "id": "40",
+      "type": "ute7"
+    },
+    {
+      "id": "41",
+      "type": "ute8"
+    },
+    {
+      "id": "42",
+      "type": "ute9"
+    },
+    {
+      "id": "43",
+      "type": "ute10"
+    },
+    {
+      "id": "44",
+      "type": "ute11"
+    },
+    {
+      "id": "45",
+      "type": "van1"
+    },
+    {
+      "id": "46",
+      "type": "van2"
+    },
+    {
+      "id": "47",
+      "type": "van3"
+    },
+    {
+      "id": "48",
+      "type": "van4"
+    },
+    {
+      "id": "49",
+      "type": "van5"
+    },
+    {
+      "id": "50",
+      "type": "van6"
+    },
+    {
+      "id": "51",
+      "type": "van7"
+    },
+    {
+      "id": "52",
+      "type": "van8"
+    },
+    {
+      "id": "53",
+      "type": "van9"
+    },
+    {
+      "id": "54",
+      "type": "van10"
+    },
+    {
+      "id": "55",
+      "type": "van11"
+    }
+  ]
+}

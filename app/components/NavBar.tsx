@@ -18,7 +18,7 @@ const NavBar = () => {
         />
       </svg>
 
-      <h1>CarSale</h1>
+      <h1>TurnersCars</h1>
       <Link href="/">Daskboard</Link>
       <Link href="/findcar">FindCar</Link>
       <Link href="/ssg">SSG</Link>

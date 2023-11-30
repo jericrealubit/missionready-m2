@@ -3,44 +3,27 @@
 import { Envs } from "@/utils/config";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-// import fs from "fs";
-//const fs = require("fs");
-// const fs = require("fs");
-//var fs = require("fs");
-
-// export const getStaticProps = async () => {
-//   let filenames: String[] = [];
-//   const fileNames = fs.readdirSync("./public/images/cars");
-//   fileNames.forEach((file) => {
-//     filenames = [...filenames, ...[file]];
-//   });
-//   console.log(filenames);
-
-//   return {
-//     props: { cars: filenames },
-//   };
-// };
-
-// export const getCars = () => {
-//   const fileNames = fs.readdirSync("./public/images/cars");
-//   return fileNames;
-// };
 
 const Findcar = () => {
   const [carUrl, setCarUrl] = useState("");
-  //const [carNames, setCarNames] = useState("");
+  const [carTypes, setCarTypes] = useState("");
+  const [isLoading, setLoading] = useState(true);
+  const [isThingking, setThingking] = useState(false);
+  const [carInput, setCarInput] = useState("");
 
-  // useEffect(() => {
-  //   const fileNames = fs.readdirSync("./public/images/cars");
-  //   setCarNames(fileNames);
-  //   console.log(fileNames);
-  // }, [carNames]);
+  useEffect(() => {
+    fetch("http://localhost:4000/data")
+      .then((res) => res.json())
+      .then((data) => {
+        setCarTypes(data);
+        setLoading(false);
+      });
+  }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    //console.log(props);
-
+    setThingking(true);
     const pkey = Envs.PREDICTION_KEY;
     const purl = Envs.PREDICTION_URL;
     const submitData = { url: carUrl };
@@ -56,7 +39,11 @@ const Findcar = () => {
       });
       const data = await res.json();
       const tag = data.predictions[0].tagName;
-      console.log(tag);
+      setCarInput(tag);
+      setThingking(false);
+
+      const searchResut: string[] = getMatchType(carTypes, carInput);
+      console.log(searchResut);
 
       if (res.ok) {
         console.log("Yeai!");
@@ -68,6 +55,16 @@ const Findcar = () => {
     }
 
     setCarUrl("");
+  };
+
+  const getMatchType = (haystack: string, niddle: string) => {
+    let result: string[] = [];
+    for (let i = 0; i < haystack.length; i++) {
+      if (haystack[i].includes(niddle)) {
+        result.push(haystack[i]);
+      }
+    }
+    return result;
   };
 
   return (
@@ -100,15 +97,19 @@ const Findcar = () => {
             >
               Submit
             </button>
-
-            <div>
-              <h2>Example of getStaticProps in Next JS 13</h2>
-              {/* {carNames.map((car: String, index: number) => (
-                <li key={index}>{car}</li>
-              ))} */}
-            </div>
+            <div>{isThingking && <p>Analizing image...</p>}</div>
           </div>
         </form>
+      </div>
+      <div>
+        x{isLoading && <p>Loading...</p>}
+        {!carTypes && <p>No profile data</p>}
+        {carInput}
+        {carTypes.length > 0 &&
+          carTypes.map((car: { id: String; type: String }) => {
+            <div key={Number(car.id)}>{car.type}</div>;
+          })}
+        x
       </div>
     </main>
   );
