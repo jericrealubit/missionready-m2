@@ -10,6 +10,7 @@ const nextConfig = {
     ];
   },
   distDir: "build",
+  output: "standalone",
 };
 
 module.exports = nextConfig;
