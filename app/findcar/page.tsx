@@ -6,11 +6,11 @@ import Image from "next/image";
 
 const Findcar = () => {
   const [carUrl, setCarUrl] = useState("/images/noimage.jpeg");
-  const [carTypes, setCarTypes] = useState("");
+  const [carTypes, setCarTypes] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [isThingking, setThingking] = useState(false);
   const [carInput, setCarInput] = useState("");
-  const [carOutput, setCarOutput] = useState("");
+  const [carOutput, setCarOutput] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/data")
@@ -26,6 +26,7 @@ const Findcar = () => {
     for (let i = 0; i < haystack.length; i++) {
       if (JSON.stringify(haystack[i]).includes(niddle)) {
         result.push(haystack[i]);
+        setCarOutput(result);
       }
     }
     return result;
@@ -52,13 +53,14 @@ const Findcar = () => {
       const tag = data.predictions[0].tagName;
 
       setCarInput(tag);
+      console.log({ carInput });
       setThingking(false);
 
       //console.log(carTypes);
 
-      const searchResut: string[] = getMatchType(carTypes, tag);
-      console.log(searchResut);
-      await setCarOutput(searchResut);
+      const searchResult = getMatchType(carTypes, tag);
+      console.log(searchResult);
+      setCarOutput(searchResult);
       console.log(carOutput);
       console.log(carOutput.length);
 
