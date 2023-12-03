@@ -31,10 +31,6 @@ const Findcar = () => {
     return result;
   };
 
-  const imageLoader = ({ src, width, quality }) => {
-    return `${src}?w=${width}&q=${quality || 75}`;
-  };
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -76,11 +72,17 @@ const Findcar = () => {
     }
   };
 
+  interface Loader {
+    src: string;
+    width: number;
+    quality: number;
+  }
+
   return (
     <main>
       <div className=" flex flex-col justify-center items-center w-full p-8 ">
         <Image
-          loader={imageLoader}
+          loader={(l: Loader) => `${l.src}?w=${l.width}&q=${l.quality || 75}`}
           src={carUrl}
           alt="car image"
           width={200}
