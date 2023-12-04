@@ -7,17 +7,16 @@ import Image from "next/image";
 const Findcar = () => {
   const [carUrl, setCarUrl] = useState("/images/noimage.jpeg");
   const [carTypes, setCarTypes] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [isThingking, setThingking] = useState(false);
   const [carInput, setCarInput] = useState("");
-  const [carOutput, setCarOutput] = useState([]);
+  const [carOutput, setCarOutput] = useState<string[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/data")
       .then((res) => res.json())
       .then((data) => {
         setCarTypes(data);
-        setLoading(false);
       });
   }, []);
 
@@ -26,16 +25,22 @@ const Findcar = () => {
     for (let i = 0; i < haystack.length; i++) {
       if (JSON.stringify(haystack[i]).includes(niddle)) {
         result.push(haystack[i]);
-        setCarOutput(result);
       }
     }
+    console.log({ haystack });
+    console.log({ niddle });
+    console.log({ result });
+    setCarOutput(result);
+    console.log({ carOutput });
     return result;
   };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    setLoading(true);
     setThingking(true);
+    setCarInput("");
     const pkey = Envs.PREDICTION_KEY;
     const purl = Envs.PREDICTION_URL;
     const submitData = { url: carUrl };
@@ -53,16 +58,18 @@ const Findcar = () => {
       const tag = data.predictions[0].tagName;
 
       setCarInput(tag);
-      console.log({ carInput });
       setThingking(false);
 
-      //console.log(carTypes);
-
       const searchResult = getMatchType(carTypes, tag);
-      console.log(searchResult);
+      console.log({ searchResult });
       setCarOutput(searchResult);
-      console.log(carOutput);
-      console.log(carOutput.length);
+      //setCarOutput(result);
+      console.log({ carOutput });
+      console.log(typeof carOutput);
+      const carOutputR = Object.entries(carOutput);
+      console.log({ carOutputR });
+      console.log(typeof carOutputR);
+      setLoading(false);
 
       if (res.ok) {
         console.log("Yeai!");
@@ -84,7 +91,9 @@ const Findcar = () => {
     <main>
       <div className=" flex flex-col justify-center items-center w-full p-8 ">
         <Image
-          loader={(l: Loader) => `${l.src}?w=${l.width}&q=${l.quality || 75}`}
+          loader={(l: Loader): string =>
+            `${l.src}?w=${l.width}&q=${l.quality || 75}`
+          }
           src={carUrl}
           alt="car image"
           width={200}
@@ -124,14 +133,17 @@ const Findcar = () => {
         </form>
       </div>
       <div>
-        x{isLoading && <p>Loading...</p>}
-        {!carOutput && <p>No profile data</p>}
-        {carInput}
-        {carOutput.length > 0 &&
-          carOutput.map((car: { id: String; type: String }) => {
-            <div key={Number(car.id)}>{car.type}</div>;
-          })}
-        x
+        {isLoading && <p>Loading...</p>}
+        <div className="flex flex-col">
+          {carOutput.map((car) => (
+            <Image
+              key={car.id}
+              src={`/images/cars/${car.type}.jpeg`}
+              width={300}
+              height={300}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
