@@ -118,7 +118,7 @@ const Findcar = () => {
               }
               className=" border p-2 px-4 rounded outline-none "
               onKeyUp={(e) => {
-                isValidHttpUrl(e.target?.value)
+                isValidHttpUrl((e.target as HTMLInputElement).value)
                   ? setIsValidUrl(true)
                   : setIsValidUrl(false);
               }}
