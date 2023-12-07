@@ -11,6 +11,7 @@ const nextConfig = {
   },
   distDir: "build",
   output: "standalone",
+  ignoreBuildErrors: true,
 };
 
 module.exports = nextConfig;

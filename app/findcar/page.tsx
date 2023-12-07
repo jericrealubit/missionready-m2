@@ -93,24 +93,6 @@ const Findcar = () => {
     }
   };
 
-  interface Loader {
-    src: string;
-    width: number;
-    quality: number;
-  }
-
-  // const imageLoader = ({
-  //   src,
-  //   width,
-  //   quality,
-  // }: {
-  //   src: string;
-  //   width: number;
-  //   quality: number;
-  // }): string => {
-  //   return `${src}?w=${width}&q=${quality || 75}`;
-  // };
-
   return (
     <main>
       <div className="max-w-5xl flex flex-wrap justify-center items-center w-full ">
@@ -148,15 +130,6 @@ const Findcar = () => {
           </div>
         </form>
         <div className="flex flex-col">
-          {/* <Image
-            loader={imageLoader}
-            src={carUrl}
-            alt="car image"
-            width={200}
-            height={200}
-            priority={false}
-            className="max-h-40"
-          /> */}
           <img
             src={carUrl}
             alt="car image"
@@ -193,6 +166,7 @@ const Findcar = () => {
             src="/images/hero-moving-car.gif"
             width={200}
             height={200}
+            alt="loading image"
           />
         )}
 
@@ -206,12 +180,13 @@ const Findcar = () => {
         </div>
 
         <div className="flex flex-wrap">
-          {carOutput.map((car) => (
+          {carOutput.map((car: { id: string; type: string }) => (
             <Image
               key={car.id}
               src={`/images/cars/${car.type}.jpeg`}
               width={300}
               height={300}
+              alt="Car card"
             />
           ))}
         </div>
