@@ -180,10 +180,10 @@ const Findcar = () => {
         </div>
 
         <div className="flex flex-wrap">
-          {carOutput.map((car: { id: string; type: string }) => (
+          {carOutput.map((car) => (
             <Image
-              key={car.id}
-              src={`/images/cars/${car.type}.jpeg`}
+              key={car?.id}
+              src={`/images/cars/${car?.type}.jpeg`}
               width={300}
               height={300}
               alt="Car card"
