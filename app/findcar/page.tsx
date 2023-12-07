@@ -182,7 +182,7 @@ const Findcar = () => {
         <div className="flex flex-wrap">
           {carOutput.map((car) => (
             <Image
-              key={car?.id}
+              key={car.id}
               src={`/images/cars/${car?.type}.jpeg`}
               width={300}
               height={300}
