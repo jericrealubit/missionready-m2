@@ -99,6 +99,18 @@ const Findcar = () => {
     quality: number;
   }
 
+  // const imageLoader = ({
+  //   src,
+  //   width,
+  //   quality,
+  // }: {
+  //   src: string;
+  //   width: number;
+  //   quality: number;
+  // }): string => {
+  //   return `${src}?w=${width}&q=${quality || 75}`;
+  // };
+
   return (
     <main>
       <div className="max-w-5xl flex flex-wrap justify-center items-center w-full ">
@@ -136,15 +148,20 @@ const Findcar = () => {
           </div>
         </form>
         <div className="flex flex-col">
-          <Image
-            loader={(l: Loader): string =>
-              `${l.src}?w=${l.width}&q=${l.quality || 75}`
-            }
+          {/* <Image
+            loader={imageLoader}
             src={carUrl}
             alt="car image"
             width={200}
             height={200}
             priority={false}
+            className="max-h-40"
+          /> */}
+          <img
+            src={carUrl}
+            alt="car image"
+            width={200}
+            height={200}
             className="max-h-40"
           />
         </div>
