@@ -1,50 +1,6 @@
 {
   "data": [
     {
-      "id": "1",
-      "type": "hatchback1"
-    },
-    {
-      "id": "2",
-      "type": "hatchback2"
-    },
-    {
-      "id": "3",
-      "type": "hatchback3"
-    },
-    {
-      "id": "4",
-      "type": "hatchback4"
-    },
-    {
-      "id": "5",
-      "type": "hatchback5"
-    },
-    {
-      "id": "6",
-      "type": "hatchback6"
-    },
-    {
-      "id": "7",
-      "type": "hatchback7"
-    },
-    {
-      "id": "8",
-      "type": "hatchback8"
-    },
-    {
-      "id": "9",
-      "type": "hatchback9"
-    },
-    {
-      "id": "10",
-      "type": "hatchback10"
-    },
-    {
-      "id": "11",
-      "type": "hatchback11"
-    },
-    {
       "id": "12",
       "type": "sedan1"
     },
@@ -219,6 +175,22 @@
     {
       "id": "55",
       "type": "van11"
+    },
+    {
+      "id": "56",
+      "type": "suv12"
+    },
+    {
+      "id": "57",
+      "type": "sedan12"
+    },
+    {
+      "id": "59",
+      "type": "ute12"
+    },
+    {
+      "id": "600",
+      "type": "van12"
     }
   ]
 }
