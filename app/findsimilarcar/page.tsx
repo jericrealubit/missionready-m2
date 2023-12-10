@@ -16,7 +16,7 @@ const isValidHttpUrl = (urlInput: string) => {
   return url.protocol === "http:" || url.protocol === "https:";
 };
 
-const Findcar = () => {
+const FindSimilarCar = () => {
   const [carUrl, setCarUrl] = useState("/images/noimage.jpeg");
   const [carTypes, setCarTypes] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -171,7 +171,7 @@ const Findcar = () => {
         )}
 
         <div>
-          {!isValidUrl && (
+          {!isValidUrl && carUrl.length > 0 && (
             <div className="error">Please enter a valid url.</div>
           )}
           {carInput === "Negative" && (
@@ -180,7 +180,7 @@ const Findcar = () => {
         </div>
 
         <div className="flex flex-wrap">
-          {carOutput.map((car: { id: string; type: string }) => (
+          {carOutput.map((car) => (
             <Image
               key={car.id}
               src={`/images/cars/${car.type}.jpeg`}
@@ -195,4 +195,4 @@ const Findcar = () => {
   );
 };
 
-export default Findcar;
+export default FindSimilarCar;

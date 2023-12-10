@@ -59,8 +59,7 @@ button:hover {
 
 /* form styles */
 form {
-  @apply py-4 px-2
-    bg-primary
+  @apply bg-primary
     bg-opacity-5
     rounded-md
     block
@@ -74,7 +73,7 @@ form input,
 form textarea,
 form select {
   @apply block
-    mt-2 my-4 px-2 py-1
+    mt-2 my-4 px-5 py-1
     rounded-sm w-full;
 }
 form button {

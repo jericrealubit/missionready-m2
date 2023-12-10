@@ -10,7 +10,7 @@ const NavBar = () => {
         width={100}
         height={100}
       />
-      <Link href="/findcar">FindCar</Link>
+      <Link href="/">Find Similar Car</Link>
     </nav>
   );
 };
