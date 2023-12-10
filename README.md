@@ -4,7 +4,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/jericrealubit/missionready-m2)
 
-### URL: https://m0-movie-app.netlify.app/
+### URL: deploying...
 
 #### Presentation:
 
@@ -16,6 +16,7 @@ https://www.loom.com/share/0bc3928fe023479495ecb9e552a16f57?sid=b3b80ef7-1859-4f
 
 ### Built With
 
+- [Azure AI Custom Vision]
 - [Next.js] 13
 - [Typescript]
 - [Tailwind]
@@ -62,6 +63,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
+[Azure AI Custom Vision]: https://azure.microsoft.com/en-us/products/ai-services/ai-custom-vision
 [Typescript]: https://www.typescriptlang.org/
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
