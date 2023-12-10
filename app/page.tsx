@@ -4,6 +4,7 @@ import { Envs } from "@/utils/config";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Info from "./components/Info";
+import CarCard from "./components/CarCard";
 
 const isValidHttpUrl = (urlInput: string) => {
   let url;
@@ -15,11 +16,7 @@ const isValidHttpUrl = (urlInput: string) => {
     return false;
   }
 
-  return (
-    url.protocol === "http:" ||
-    url.protocol === "https:" ||
-    url.protocol === "blob:"
-  );
+  return url.protocol === "http:" || url.protocol === "https:";
 };
 
 const Home = () => {
@@ -28,10 +25,7 @@ const Home = () => {
   const [isLoading, setLoading] = useState(false);
   const [carInput, setCarInput] = useState("");
   const [carOutput, setCarOutput] = useState<string[]>([]);
-  const [isValidUrl, setIsValidUrl] = useState(false);
-  const [visionError, setVisionError] = useState(false);
-  const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [isValidUrl, setIsValidUrl] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:4000/data")
@@ -63,20 +57,11 @@ const Home = () => {
       const pkey = Envs.PREDICTION_KEY;
       const purl = Envs.PREDICTION_URL;
 
-      const submitData = image ? image : JSON.stringify({ url: carUrl });
-      const headers = image
-        ? {
-            "content-type": "application/octet-stream",
-            "Prediction-Key": pkey || "",
-          }
-        : {
-            "content-type": "application/json",
-            "Prediction-Key": pkey || "",
-          };
-
-      console.log({ image });
-      console.log({ submitData });
-      console.log({ headers });
+      const submitData = JSON.stringify({ url: carUrl });
+      const headers = {
+        "content-type": "application/json",
+        "Prediction-Key": pkey || "",
+      };
 
       const res = await fetch(purl || "", {
         method: "POST",
@@ -106,19 +91,10 @@ const Home = () => {
         const searchResult = getMatchType(carTypes, tag);
         console.log({ searchResult });
         setLoading(false);
+        setIsValidUrl(true);
       }
     } else {
       setIsValidUrl(false);
-    }
-  };
-
-  const uploadToClient = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      const i = event.target.files[0];
-
-      setImage(i);
-      setCreateObjectURL(URL.createObjectURL(i));
-      console.log({ createObjectURL });
     }
   };
 
@@ -132,17 +108,11 @@ const Home = () => {
         >
           <div className=" flex justify-center items-center gap-4 ">
             <div>
-              <img src={createObjectURL} />
-              <input type="file" name="myImage" onChange={uploadToClient} />
               <input
                 type="text"
                 name="url"
                 placeholder="Enter car image url"
-                onBlur={(e) =>
-                  e.target.value.length > 0
-                    ? setCarUrl(e.target.value)
-                    : undefined
-                }
+                onBlur={(e) => setCarUrl(e.target.value)}
                 className=" border p-2 px-4 rounded outline-none "
                 onKeyUp={(e) => {
                   isValidHttpUrl((e.target as HTMLInputElement).value)
@@ -169,31 +139,11 @@ const Home = () => {
             alt="car image"
             width={200}
             height={200}
-            className="max-h-40"
+            className="max-h-32"
           />
         </div>
       </div>
       <div>
-        {visionError && (
-          <div
-            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-            role="alert"
-          >
-            <strong className="font-bold">Error!</strong>
-            <span className="block sm:inline">{visionError}</span>
-            <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-              <svg
-                className="fill-current h-6 w-6 text-red-500"
-                role="button"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <title>Close</title>
-                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
-              </svg>
-            </span>
-          </div>
-        )}
         {isLoading && (
           <Image
             className="mx-auto"
@@ -205,25 +155,15 @@ const Home = () => {
         )}
 
         <div>
-          {carUrl.length === 0 && <Info />}
           {!isValidUrl && (
             <div className="error">Please enter a valid url.</div>
           )}
           {carInput === "Negative" && (
             <div className="error">This is not a car image</div>
           )}
-        </div>
-
-        <div className="flex flex-wrap">
-          {carOutput.map((car) => (
-            <Image
-              key={car.id}
-              src={`/images/cars/${car.type}.jpeg`}
-              width={300}
-              height={300}
-              alt="Car card"
-            />
-          ))}
+          {isValidUrl && carInput !== "Negative" && (
+            <CarCard carOutput={carOutput} />
+          )}
         </div>
       </div>
     </main>
