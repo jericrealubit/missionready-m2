@@ -1,0 +1,294 @@
+[{
+  "_id": {
+    "$oid": "658e801c00c7dd421cd6df87"
+  },
+  "type": "sedan1"
+},
+{
+  "_id": {
+    "$oid": "658e801c00c7dd421cd6df88"
+  },
+  "type": "sedan2"
+},
+{
+  "_id": {
+    "$oid": "658e801c00c7dd421cd6df89"
+  },
+  "type": "sedan3"
+},
+{
+  "_id": {
+    "$oid": "658e801c00c7dd421cd6df8a"
+  },
+  "type": "sedan4"
+},
+{
+  "_id": {
+    "$oid": "658e801c00c7dd421cd6df8b"
+  },
+  "type": "sedan5"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df8c"
+  },
+  "type": "sedan6"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df8d"
+  },
+  "type": "sedan7"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df8e"
+  },
+  "type": "sedan8"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df8f"
+  },
+  "type": "sedan9"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df90"
+  },
+  "type": "sedan10"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df91"
+  },
+  "type": "sedan11"
+},
+{
+  "_id": {
+    "$oid": "658e806100c7dd421cd6df92"
+  },
+  "type": "sedan12"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df93"
+  },
+  "type": "suv1"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df94"
+  },
+  "type": "suv2"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df95"
+  },
+  "type": "suv3"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df96"
+  },
+  "type": "suv4"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df97"
+  },
+  "type": "suv5"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df98"
+  },
+  "type": "suv6"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df99"
+  },
+  "type": "suv7"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df9a"
+  },
+  "type": "suv8"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df9b"
+  },
+  "type": "suv9"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df9c"
+  },
+  "type": "suv10"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df9d"
+  },
+  "type": "suv11"
+},
+{
+  "_id": {
+    "$oid": "658ea17e00c7dd421cd6df9e"
+  },
+  "type": "suv12"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6df9f"
+  },
+  "type": "van1"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa0"
+  },
+  "type": "van2"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa1"
+  },
+  "type": "van3"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa2"
+  },
+  "type": "van4"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa3"
+  },
+  "type": "van5"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa4"
+  },
+  "type": "van6"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa5"
+  },
+  "type": "van7"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa6"
+  },
+  "type": "van8"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa7"
+  },
+  "type": "van9"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa8"
+  },
+  "type": "van10"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfa9"
+  },
+  "type": "van11"
+},
+{
+  "_id": {
+    "$oid": "658ea19d00c7dd421cd6dfaa"
+  },
+  "type": "van12"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfab"
+  },
+  "type": "ute1"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfac"
+  },
+  "type": "ute2"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfad"
+  },
+  "type": "ute3"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfae"
+  },
+  "type": "ute4"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfaf"
+  },
+  "type": "ute5"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb0"
+  },
+  "type": "ute6"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb1"
+  },
+  "type": "ute7"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb2"
+  },
+  "type": "ute8"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb3"
+  },
+  "type": "ute9"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb4"
+  },
+  "type": "ute10"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb5"
+  },
+  "type": "ute11"
+},
+{
+  "_id": {
+    "$oid": "658ea1b100c7dd421cd6dfb6"
+  },
+  "type": "ute12"
+},
+{
+  "_id": {
+    "$oid": "6593772f0a920eccb66fe81c"
+  },
+  "type": "testing"
+}]

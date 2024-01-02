@@ -28,7 +28,7 @@ const Home = () => {
   const [isValidUrl, setIsValidUrl] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/data")
+    fetch("http://localhost:3000/api/cartypes/v1")
       .then((res) => res.json())
       .then((data) => {
         setCarTypes(data);

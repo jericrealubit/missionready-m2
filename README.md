@@ -30,3 +30,7 @@ json-server --watch db.json --port 4000
 [Next-url]: https://nextjs.org/
 [tailwindcss]: https://img.shields.io/badge/Tailwind-.css-blue?style=for-the-badge&logo=tailwindcss&logoColor=blue
 [Tailwind-url]: https://tailwindcss.com/
+
+### database
+
+"C:\Program Files\MongoDB\Server\7.0\bin\mongod.exe" --dbpath="c:\data\db"
