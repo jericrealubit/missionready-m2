@@ -23,12 +23,12 @@ json-server --watch db.json --port 4000
 
 [azure-ai]: https://img.shields.io/badge/azure-ai-green?style=for-the-badge&logo=microsoft&logoColor=blue
 [Azure-AI-Custom-Vision-url]: https://azure.microsoft.com/en-us/products/ai-services/ai-custom-vision
-[typescript]: https://img.shields.io/badge/typescript-.ts-blue?style=for-the-badge&logo=typescript&logoColor=blue
+[typescript]: https://img.shields.io/badge/typescript-ts-blue?style=for-the-badge&logo=typescript&logoColor=blue
 [Typescript-url]: https://www.typescriptlang.org/
 [product-screenshot]: public/images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
-[tailwindcss]: https://img.shields.io/badge/Tailwind-.css-blue?style=for-the-badge&logo=tailwindcss&logoColor=blue
+[tailwindcss]: https://img.shields.io/badge/Tailwind-css-blue?style=for-the-badge&logo=tailwindcss&logoColor=blue
 [Tailwind-url]: https://tailwindcss.com/
 
 ### database
