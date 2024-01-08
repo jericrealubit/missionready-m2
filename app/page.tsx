@@ -43,6 +43,7 @@ const Home = () => {
         result.push(haystack[i]);
       }
     }
+    console.log({ result });
     setCarOutput(result);
     return result;
   };

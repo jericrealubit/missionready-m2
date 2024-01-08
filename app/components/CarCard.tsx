@@ -1,11 +1,16 @@
 import Image from "next/image";
 
-const CarCard = ({ carOutput }) => {
+type Ctype = {
+  _id: string;
+  type: string;
+};
+
+const CarCard = ({ carOutput }: any) => {
   return (
     <div className="flex flex-wrap">
-      {carOutput.map((car) => (
+      {carOutput.map((car: Ctype) => (
         <Image
-          key={car.id}
+          key={car._id}
           src={`/images/cars/${car.type}.jpeg`}
           width={250}
           height={250}
