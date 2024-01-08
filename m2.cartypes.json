@@ -285,10 +285,4 @@
     "$oid": "658ea1b100c7dd421cd6dfb6"
   },
   "type": "ute12"
-},
-{
-  "_id": {
-    "$oid": "6593772f0a920eccb66fe81c"
-  },
-  "type": "testing"
 }]
