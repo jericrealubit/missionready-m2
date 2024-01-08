@@ -11,7 +11,6 @@ const isValidHttpUrl = (urlInput: string) => {
 
   try {
     url = new URL(urlInput);
-    console.log(url.protocol);
   } catch (_) {
     return false;
   }
@@ -25,10 +24,12 @@ const Home = () => {
   const [isLoading, setLoading] = useState(false);
   const [carInput, setCarInput] = useState("");
   const [carOutput, setCarOutput] = useState<string[]>([]);
-  const [isValidUrl, setIsValidUrl] = useState(true);
+  const [validUrl, setValidUrl] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/cartypes/v1")
+    const baseUrl =
+      window.location.hostname === "localhost" ? "http://localhost:3000" : "";
+    fetch(baseUrl + "/api/cartypes/v1")
       .then((res) => res.json())
       .then((data) => {
         setCarTypes(data);
@@ -52,7 +53,7 @@ const Home = () => {
     setCarOutput([]);
     setCarInput("");
 
-    if (isValidUrl) {
+    if (validUrl) {
       setLoading(true);
       const pkey = Envs.PREDICTION_KEY;
       const purl = Envs.PREDICTION_URL;
@@ -70,7 +71,7 @@ const Home = () => {
       })
         .then((response) => {
           if (response.status >= 400 && response.status < 600) {
-            console.log(response);
+            //console.log(response);
             throw new Error(`Request failed with status ${response.status}`);
           } else {
             return response;
@@ -91,10 +92,18 @@ const Home = () => {
         const searchResult = getMatchType(carTypes, tag);
         console.log({ searchResult });
         setLoading(false);
-        setIsValidUrl(true);
+        setValidUrl(true);
       }
     } else {
-      setIsValidUrl(false);
+      const carAvailableTypes = ["sedan", "suv", "ute", "van"];
+      if (carAvailableTypes.includes(carUrl)) {
+        setCarOutput([]);
+        const searchResult = getMatchType(carTypes, carUrl);
+        console.log({ searchResult });
+        console.log({ carOutput });
+      } else {
+        setValidUrl(false);
+      }
     }
   };
 
@@ -111,13 +120,13 @@ const Home = () => {
               <input
                 type="text"
                 name="url"
-                placeholder="Enter car image url"
+                placeholder="Enter car image url or one of [sedan, suv, ute, van]"
                 onBlur={(e) => setCarUrl(e.target.value)}
                 className=" border p-2 px-4 rounded outline-none "
                 onKeyUp={(e) => {
                   isValidHttpUrl((e.target as HTMLInputElement).value)
-                    ? setIsValidUrl(true)
-                    : setIsValidUrl(false);
+                    ? setValidUrl(true)
+                    : setValidUrl(false);
                 }}
               />
             </div>
@@ -155,15 +164,11 @@ const Home = () => {
         )}
 
         <div>
-          {!isValidUrl && (
-            <div className="error">Please enter a valid url.</div>
-          )}
+          {!validUrl && <div className="error">Please enter a valid url.</div>}
           {carInput === "Negative" && (
             <div className="error">This is not a car image</div>
           )}
-          {isValidUrl && carInput !== "Negative" && (
-            <CarCard carOutput={carOutput} />
-          )}
+          {carInput !== "Negative" && <CarCard carOutput={carOutput} />}
         </div>
       </div>
     </main>

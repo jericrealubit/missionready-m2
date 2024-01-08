@@ -64,7 +64,7 @@ form {
     rounded-md
     block
     mx-auto
-    min-w-fit w-1/4;
+    min-w-fit w-3/5;
 }
 form label {
   @apply block;
