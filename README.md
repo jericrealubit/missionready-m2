@@ -4,7 +4,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://missionready-m2.vercel.app/)
 
-### URL: https://missionready-m2-dymo8ywdm-jericrealubit.vercel.app/
+### URL: https://missionready-m2.vercel.app/
 
 #### Presentation:
 
